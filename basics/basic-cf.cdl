@@ -1,0 +1,32 @@
+netcdf example {   // example of CDL notation
+  dimensions:
+      lon = 3 ;
+      lat = 5 ;
+  variables:
+      float lat(lat);
+          lat:long_name = "latitude" ;
+          lat:units = "degrees_north" ;
+          lat:standard_name = "latitude" ;
+      float lon(lon);
+          lon:long_name = "longitude" ;
+          lon:units = "degrees_east" ;
+          lon:standard_name = "longitude" ;
+
+      float temp(lon, lat) ;
+          temp:units = "Celsius" ;
+          temp:standard_name = "surface_temperature" ;
+
+  // global attributes
+      :title = "Simple CF example" ;
+      :Conventions = "CF-1.7";
+
+  data:
+      lat =
+          -90., 0., 90. ;
+      lon =
+          -180., -90., 0., 90., 179. ;
+      temp =
+          2, 3, 5, 7, 11,
+          13, 17, 19, 23, 29,
+          31, 37, 41, 43, 47 ;
+}

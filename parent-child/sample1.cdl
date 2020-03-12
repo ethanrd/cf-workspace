@@ -1,0 +1,43 @@
+netcdf CF_H.2.1.1 {
+dimensions:
+      event = 1234 ;
+
+   variables:
+      int event(event) ;
+          // event:cf_role = "obs_id"
+          event:parent_id = "event_parent_grou_id"
+      double event_time(event) ;
+          event_time:standard_name = “time”;
+          event_time:long_name = "time of measurement" ;
+          event_time:units = "days since 1970-01-01 00:00:00" ;
+      float event_lon(event) ;
+          event_lon:standard_name = "longitude";
+          event_lon:long_name = "longitude of the eventervation";
+          event_lon:units = "degrees_east";
+      float event_lat(event) ;
+          event_lat:standard_name = "latitude";
+          event_lat:long_name = "latitude of the observation" ;
+          event_lat:units = "degrees_north" ;
+      float event_alt(event) ;
+          event_alt:long_name = "vertical distance above the surface" ;
+          event_alt:standard_name = "height" ;
+          event_alt:units = "m";
+          event_alt:positive = "up";
+          event_alt:axis = "Z";
+
+      float event_energy(event) ;
+          event_energy:standard_name = "????" ;
+          event_energy:units = "" ;
+          event_energy:coordinates = "time lat lon alt" ;
+      float event_area(event) ;
+          temp:standard_name = "air_temperature" ;
+          temp:units = "Celsius" ;
+          temp:coordinates = "time lat lon alt" ;
+
+   attributes:
+      :featureType = "point";
+
+  dimensions:
+	event = 10 ;
+
+}

@@ -1,0 +1,3 @@
+netcdf StringAttributes {
+  :Conventions = "CF-1.7" ;
+}

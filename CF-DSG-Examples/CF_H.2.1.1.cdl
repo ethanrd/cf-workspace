@@ -1,0 +1,68 @@
+netcdf CF_H.2.1.1 {
+  dimensions:
+	station = 10 ;
+	time = 5 ;
+	name_strlen = 3 ;
+  variables:
+	float humidity(station, time) ;
+		humidity:standard_name = "specific_humidity" ;
+		humidity:coordinates = "time lat lon alt" ;
+	double time(time) ;
+		time:standard_name = "time" ;
+		time:long_name = "time of measurement" ;
+		time:units = "days since 1970-01-01 00:00:00" ;
+	float lon(station) ;
+		lon:standard_name = "longitude" ;
+		lon:long_name = "station longitude" ;
+		lon:units = "degrees_east" ;
+	float lat(station) ;
+		lat:standard_name = "latitude" ;
+		lat:long_name = "station latitude" ;
+		lat:units = "degrees_north" ;
+	float alt(station) ;
+		alt:long_name = "vertical distance above the surface" ;
+		alt:standard_name = "height" ;
+		alt:units = "m" ;
+		alt:positive = "up" ;
+		alt:axis = "Z" ;
+	char station_name(station, name_strlen) ;
+		station_name:long_name = "station name" ;
+		station_name:cf_role = "timeseries_id" ;
+
+// global attributes:
+		:featureType = "timeSeries" ;
+		:Conventions = "CF-1.6" ;
+data:
+
+ humidity =
+  1, 2, 3, 4, 5,
+  6, 7, 8, 9, 10,
+  11, 12, 13, 14, 15,
+  16, 17, 18, 19, 20,
+  21, 22, 23, 24, 25,
+  26, 27, 28, 29, 30,
+  31, 32, 33, 34, 35,
+  36, 37, 38, 39, 40,
+  41, 42, 43, 44, 45,
+  46, 47, 48, 49, 50 ;
+
+ time = 2, 4, 6, 8, 10 ;
+
+ lon = 3, 6, 9, 12, 15, 18, 21, 24, 27, 30 ;
+
+ lat = 4, 8, 12, 16, 20, 24, 28, 32, 36, 40 ;
+
+ alt = 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 ;
+
+ station_name =
+  "AAA",
+  "BBB",
+  "CCC",
+  "DDD",
+  "EEE",
+  "FFF",
+  "GGG",
+  "HHH",
+  "III",
+  "JJJ" ;
+}
