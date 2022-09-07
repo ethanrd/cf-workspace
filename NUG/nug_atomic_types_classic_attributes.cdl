@@ -1,0 +1,34 @@
+netcdf nug_atomic_types_classic_attributes {   // Test
+  dimensions:
+      dim = 3 ;
+  variables:
+      char vchar(dim) ;
+          vchar:valid_range = "a", "g" ;
+      byte vbyte(dim) ;
+          vbyte:valid_range = -5b, 5b ;
+      short vshort(dim) ;
+          vshort:valid_range = -10s, 10s ;
+      int vint(dim) ;
+          vint:valid_range = -15, 15 ;
+      long vlong(dim) ;
+          vlong:valid_range = -20, 20 ;
+      float vfloat(dim) ;
+          vfloat:valid_range = -25.0f, 25.0f ;
+      real vreal(dim) ;
+          vreal:valid_range = -30.0f, 30.0f ;
+      double vdouble(dim) ;
+          vdouble:valid_range = -35.0, 35.0;
+
+  // global attributes
+      :title = "test atomic data types in classic data model" ;
+
+  data:
+      vchar = "a", "d", "g" ;
+      vbyte = -3, 4, 5 ;
+      vshort = -4, 9, 10 ;
+      vint = -5, 14, 15 ;
+      vlong = -6, 19, 20 ;
+      vfloat = -7, 24, 25 ;
+      vreal = -8, 29, 30 ;
+      vdouble = -9, 34, 35 ;
+}

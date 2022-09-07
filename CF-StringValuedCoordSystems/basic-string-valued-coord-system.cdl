@@ -1,0 +1,50 @@
+netcdf basic-svcs {   // Test handling of string-valued coordinate variables
+  dimensions:
+      lon = 3 ;
+      lat = 5 ;
+      ens = 5 ;
+      ens_length = 4 ;
+  variables:
+      float lat(lat);
+          lat:long_name = "latitude" ;
+          lat:units = "degrees_north" ;
+          lat:standard_name = "latitude" ;
+      float lon(lon);
+          lon:long_name = "longitude" ;
+          lon:units = "degrees_east" ;
+          lon:standard_name = "longitude" ;
+       char ens(ens, ens_length) ;
+
+      float temp(lon, lat, ens) ;
+          temp:units = "Celsius" ;
+          temp:standard_name = "surface_temperature" ;
+
+  // global attributes
+      :title = "Simple CF example" ;
+      :Conventions = "CF-1.7";
+
+  data:
+      lat =
+          -90., 0., 90. ;
+      lon =
+          -180., -90., 0., 90., 179. ;
+      ens =
+          "ap01",
+          "ap02",
+          "ap03",
+          "bp01",
+          "bp02" ;
+
+      temp =
+          2, 3, 5, 7, 11,
+          13, 17, 19, 23, 29,
+          31, 37, 41, 43, 47,
+
+          2.5, 3.5, 5.5, 7.5, 11.5,
+          13.5, 17.5, 19.5, 23.5, 29.5,
+          31.5, 37.5, 41.5, 43.5, 47.5,
+
+          2.9, 3.9, 5.9, 7.9, 11.9,
+          13.9, 17.9, 19.9, 23.9, 29.9,
+          31.9, 37.9, 41.9, 43.9, 47.9 ;
+}

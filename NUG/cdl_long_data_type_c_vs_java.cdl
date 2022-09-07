@@ -1,0 +1,28 @@
+netcdf cdl_long_data_type_c_vs_java {   // Test
+  dimensions:
+      dim = 3 ;
+  variables:
+
+      int vint(dim) ;
+          vint:valid_range = -15, 15 ;
+      long vlong(dim) ;
+          vlong:valid_range = -20, 20 ;
+      uint vuint(dim) ;
+          vuint:valid_range = 0u, 15u ;
+
+      int64 vint64(dim) ;
+          vint64:valid_range = 0ll, 20ll ;
+      uint64 vuint64(dim) ;
+          vuint64:valid_range = 0ull, 25ull ;
+
+  // global attributes
+      :title = "test additional atomic data types in enhanced data model" ;
+
+  data:
+      vint    =  -5, 14, 15 ;
+      vlong   =  -6, 19, 20 ;
+      vuint   =   0, 21, 22 ;
+
+      vint64  =  -7, 24, 25 ;
+      vuint64 =   0, 26, 27 ;
+}

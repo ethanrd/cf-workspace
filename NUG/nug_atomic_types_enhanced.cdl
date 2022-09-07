@@ -1,0 +1,22 @@
+netcdf nug_atomic_types_enhanced {   // Test
+  dimensions:
+      dim = 3 ;
+  variables:
+      ubyte vubyte(dim) ;
+      ushort vushort(dim) ;
+      uint vuint(dim) ;
+      int64 vint64(dim) ;
+      uint64 vuint64(dim) ;
+      string vstring(dim) ;
+
+  // global attributes
+      :title = "test additional atomic data types in enhanced data model" ;
+
+  data:
+      vubyte = 0, 1, 2 ;
+      vushort = 0, 1, 2 ;
+      vuint = 0, 1, 2 ;
+      vint64 = 0, 1, 2 ;
+      vuint64 = 0, 1, 2 ;
+      vstring = "aaaaaa", "bbbb", "zzaaa" ;
+}

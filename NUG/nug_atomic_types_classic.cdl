@@ -1,0 +1,26 @@
+netcdf nug_atomic_types_classic {   // Test
+  dimensions:
+      dim = 3 ;
+  variables:
+      char vchar(dim) ;
+      byte vbyte(dim) ;
+      short vshort(dim) ;
+      int vint(dim) ;
+      long vlong(dim) ;
+      float vfloat(dim) ;
+      real vreal(dim) ;
+      double vdouble(dim) ;
+
+  // global attributes
+      :title = "test classic atomic types" ;
+
+  data:
+      vchar = 'a', 'b', 'c' ;
+      vbyte = 0, 1, 2 ;
+      vshort = 0, 1, 2 ;
+      vint = 0, 1, 2 ;
+      vlong = 0, 1, 2 ;
+      vfloat = 0, 1, 2 ;
+      vreal = 0, 1, 2 ;
+      vdouble = 0, 1, 2 ;
+}

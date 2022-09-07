@@ -1,0 +1,15 @@
+netcdf WMO_Example_1 {
+  dimensions:
+    obs = 5;
+  variables:
+    float sea_surface_temperature( obs );
+      sea_surface_temperature:valid_range = -5.0f, 35.0f;
+      sea_surface_temperature:units ="Celsius";
+      sea_surface_temperature:flag_values = -9999.0f, -9998.0f;
+      sea_surface_temperature:flag_meanings = "landlocked ice_covered";
+
+    :Conventions = "CF-1.8";
+
+  data:
+     sea_surface_temperature = 0.0, 5.0, 14.0, 16.0, 12.0 ;
+}
